@@ -1,0 +1,41 @@
+services:
+    db:
+        image: postgres:alpine
+        container_name: backend_challenge_db
+        build:
+            context: ./src/infra/db
+            dockerfile: Dockerfile
+        ports:
+            - '5432:5432'
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=backend
+        volumes:
+            - ./src/infra/db/data:/var/lib/postgresql/data
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U postgres']
+            interval: 10s
+            start_period: 10s
+            timeout: 4s
+            retries: 3
+    app:
+        container_name: backend_challenge
+        command: sh -c "npm run migrate && npm run dev"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '3000:3000'
+        volumes:
+            - .:/usr/src/app
+        links:
+            - db
+        depends_on:
+            - db
+        environment:
+            DB_HOST: host.docker.internal
+            DB_USER: postgres
+            DB_PASSWORD: postgres
+            JWT_SECRET: 123456
+            PORT: 3000

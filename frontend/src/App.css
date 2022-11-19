@@ -1,0 +1,33 @@
+/* Todos os elementos que tiverem a propriedade box-sizing: border-box, terão o tamanho da borda e o padding incluídos no tamanho total do elemento. */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Todos os elementos que tiverem a propriedade list-style: none, não terão o estilo de lista padrão do navegador. */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* O scroll será suave */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* A renderização do texto será mais rápida */
+body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.2;
+    min-height: 100vh;
+    min-width: 300px;
+}
+
+/* A imagem não será esticada para fora do seu container */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

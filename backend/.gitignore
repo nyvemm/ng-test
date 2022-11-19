@@ -1,0 +1,13 @@
+/* Node Enviroment*/
+node_modules
+package-lock.json
+
+/* Apple Stuff */
+.DS_Store
+.idea
+
+/* Docker */
+/src/infra/db/data
+
+/* Test */
+coverage
