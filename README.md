@@ -1,46 +1,46 @@
-# Processo Seletivo NG <> TRYBE
+# NG <> TRYBE Selection Process
 
-Aplicante: João Victor Sawada [[E-mail](mailto:joaovictorsawada@gmail.com)] [[Github](https://github.com/nyvemm)]
+Applicant: João Victor Sawada [[E-mail](mailto:joaovictorsawada@gmail.com)] [[GitHub](https://github.com/nyvemm)]
 
-## Sobre o projeto
+## About this project
 
-Fiz uma aplicação web fullstack dockerizado assim como se pedia no [desafio](https://ngcash.notion.site/Processo-Seletivo-NG-TRYBE-223de32e1ed047f2aa90cc0da84754ee). Tanto a parte de backend quanto a de frontend estão em repositórios separados, mas ambos estão dockerizados e podem ser executados com um único comando.
+I built a dockerized full-stack web application as requested in the [challenge](https://ngcash.notion.site/Processo-Seletivo-NG-TRYBE-223de32e1ed047f2aa90cc0da84754ee). Both the backend and the frontend are in separate repositories, but both are dockerized and can be started with a single command.
 
-### Como rodar o projeto
+### How to run the project
 
-Para rodar o projeto, basta executar o comando `docker-compose up` na raiz do projeto. Isso irá subir o backend e o frontend em containers um mesmo container docker. Mas se quiser rodar separadamente, basta entrar nas pastas `backend` e `frontend` e ler a documentação de cada uma.
+To run the project, execute `docker-compose up` in the project root. This will start the backend and the frontend in containers. If you prefer to run them separately, go into the `backend` and `frontend` folders and follow the documentation in each.
 
-### Acessando a aplicação
+### Accessing the application
 
-A aplicação estará disponível em `localhost:80`, como web server foi utilizado o [nginx](https://www.nginx.com/) para fazer o proxy reverso entre o frontend e o backend. Caso queira acessar a API, ela estará disponível em `localhost:80/api`.
+The application is available at `localhost:80`. Nginx is used as the web server and reverse proxy between the frontend and the backend. If you want to access the API directly, it is available at `localhost:80/api`.
 
-### Rodando no ambiente de testes
+### Running in a development environment
 
-Para o desenvolvimento, eu recomendo subir a aplicação pelo docker e então rodar o `frontend` pelo `yarn dev`. Assim, o frontend poderá ter acesso direito a API e não precisará de um proxy reverso.
+For development, I recommend starting the app with Docker and then running the `frontend` with `yarn dev`. This allows the frontend to access the API directly without requiring a reverse proxy.
 
-Caso tenha algum erro de CORS, basta adicionar flags no navegador para desabilitar o CORS. No chrome, por exemplo, basta adicionar a flag `--disable-web-security` e `--user-data-dir` para desabilitar o CORS.
+If you encounter CORS issues during development, you can add flags to your browser to disable web security. For Chrome, for example, add the flags `--disable-web-security` and `--user-data-dir` to start it without CORS restrictions.
 
 > open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials
 
 ---
 
-### Requisitos
+### Requirements
 
-Todos os requisitos especificados no desafio foram implementados tanto no backend quanto no frontend.
+All requirements specified in the challenge have been implemented in both the backend and the frontend.
 
 ### Git
 
-Toda a aplicação está versionada em [Git](https://git-scm.com/), possuindo commits bem descritos e organizados de maneira semântica. Caso queira ver o histórico de commits, basta acessar pelo comando `git log`.
+The whole project is versioned with [Git](https://git-scm.com/) and uses descriptive, semantic commits. To view the commit history, run `git log`.
 
-### Testes
+### Tests
 
-Foram implementados testes unitários para o backend e frontend. Para as duas aplicações, os testes foram feitos usando o [jest](https://jestjs.io/). Para rodar os testes, basta executar o comando `jest` na pasta de cada aplicação. Se quiser ver a cobertura dos testes, basta executar o comando `jest --coverage` na pasta de cada aplicação.
+Unit tests are implemented for both backend and frontend using [Jest](https://jestjs.io/). To run the tests, execute `jest` inside each application folder. To view coverage, run `jest --coverage`.
 
-### Responsividade
+### Responsiveness
 
-A aplicação do frontend é responsiva, podendo ser acessada tanto em desktop quanto em mobile.
+The frontend is responsive and works on both desktop and mobile devices.
 
-### Documentação adicional
+### Additional documentation
 
 - [Backend](./backend/README.md)
 - [Frontend](./frontend/README.md)
